@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Seedline Labs sets up AI voice agents, speed to lead, follow-up and CRM systems for pool companies, concrete companies and general contractors.">
+<title>Seedline Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: steady, plain-spoken contractor site — navy ink, one confident blue, big readable controls; a trade switcher drives every section */
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --sunk:#EDF1F6; --ink:#0F1E33; --muted:#4F5E76; --line:#D6DEE8;
+  --accent:#1D5FD1; --accent-soft:#E3ECFB; --accent-ink:#FFFFFF;
+  --deep:#0F2747; --on-deep:#F0F4FA;
+  --good:#16794A; --bad:#B2382A;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#23344D;
+  --accent:#5E96F2; --accent-soft:#16294A; --accent-ink:#06101F; --deep:#132B50; --on-deep:#EEF3FB;
+  --good:#4CC583; --bad:#EF7A66; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#23344D;
+  --accent:#5E96F2; --accent-soft:#16294A; --accent-ink:#06101F; --deep:#132B50; --on-deep:#EEF3FB;
+  --good:#4CC583; --bad:#EF7A66; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1120px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);font-weight:700;border:0;border-radius:10px;padding:14px 22px;font-size:16px;text-decoration:none;cursor:pointer;font-family:var(--body)}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+section{padding-block:76px;border-top:1px solid var(--line)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:36px}
+.head h2{font-size:clamp(32px,4.4vw,48px);font-weight:800}
+.head p{color:var(--muted);max-width:48ch}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);margin-inline:-20px;padding-inline:20px;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--display);font-weight:800;font-size:21px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.logo svg{width:26px;height:26px}
+nav{display:flex;gap:24px;font-weight:600;font-size:15px}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--accent)}
+@media (max-width:800px){nav{display:none}}
+
+/* hero */
+.hero{padding-block:52px 64px;display:grid;gap:34px}
+.switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:640px}
+.tab{all:unset;cursor:pointer;border-radius:var(--r);padding:14px 18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;gap:2px}
+.tab b{font-family:var(--display);font-size:19px;font-weight:700}
+.tab span{font-size:13.5px;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--deep);color:var(--on-deep);box-shadow:inset 0 0 0 2px var(--accent)}
+.tab[aria-selected="true"] span{color:var(--on-deep);opacity:.8}
+.tab:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.hero h1{font-size:clamp(40px,6.6vw,76px);font-weight:800;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:19px;color:var(--muted);max-width:60ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.ticker{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:15px;color:var(--muted)}
+.ticker span::before{content:"✓ ";color:var(--good);font-weight:700}
+.ticker b{color:var(--ink)}
+
+/* pain */
+.pain{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+@media (max-width:820px){.pain{grid-template-columns:1fr;gap:28px}}
+.pain h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+.pain ul{list-style:none;margin:0;padding:0}
+.pain li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+.pain li:first-child{padding-top:0}
+.pain .x{width:26px;height:26px;border-radius:50%;background:color-mix(in srgb,var(--bad) 14%,transparent);color:var(--bad);display:grid;place-items:center;font-weight:700;font-size:13px}
+.pain li strong{display:block;font-size:18px}
+.pain li p{color:var(--muted)}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.svc .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.svc h3{font-size:22px;font-weight:700}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc.wide{grid-column:1/-1;background:var(--accent-soft);border-color:transparent}
+
+/* demo */
+.demo{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.demo{grid-template-columns:1fr}}
+.call{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;min-width:0}
+.call .meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12px;color:var(--muted);padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.call .meta b{color:var(--good)}
+.msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:15.5px}
+.msg small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
+.msg.ai{background:var(--accent-soft);border-bottom-left-radius:4px}
+.msg.cx{background:var(--sunk);justify-self:end;border-bottom-right-radius:4px}
+.after{display:grid;gap:16px;align-content:start}
+.after ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.after li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;font-size:15.5px}
+.after li span{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;padding-top:3px;min-width:60px}
+
+/* roi */
+.roi{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.roi{grid-template-columns:1fr}}
+.qs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);display:grid;gap:28px;min-width:0}
+.q{display:grid;gap:12px}
+.q label,.q .ql{font-family:var(--display);font-size:21px;font-weight:700;line-height:1.25}
+.q .hint{font-size:14.5px;color:var(--muted);margin-top:-6px}
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button{all:unset;cursor:pointer;width:54px;height:54px;border-radius:10px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;place-items:center;font-size:26px;font-weight:700;color:var(--ink)}
+.stepper button:hover{background:var(--accent-soft)}
+.stepper button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.stepper input{width:120px;height:54px;text-align:center;font:700 24px var(--mono);border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.money{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);max-width:260px;height:54px;padding-inline:14px}
+.money span{font:700 24px var(--mono);color:var(--muted)}
+.money input{all:unset;width:100%;font:700 24px var(--mono);color:var(--ink);padding-left:6px}
+.money:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.choices button{all:unset;cursor:pointer;border-radius:10px;padding:14px;text-align:center;font-weight:700;font-size:16px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line)}
+.choices button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:none}
+.choices button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.answer{background:var(--deep);color:var(--on-deep);border-radius:var(--r);padding:clamp(22px,3vw,32px);display:grid;gap:18px;position:sticky;top:90px}
+@media (max-width:900px){.answer{position:static}}
+.answer .lbl{font-size:17px;opacity:.85}
+.answer .big{font-family:var(--display);font-weight:800;font-size:clamp(48px,7vw,72px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.answer .per{font-size:17px;opacity:.85}
+.answer .rows{display:grid;gap:0;border-top:1px solid color-mix(in srgb,var(--on-deep) 20%,transparent)}
+.answer .rows div{display:flex;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid color-mix(in srgb,var(--on-deep) 20%,transparent);font-size:16px}
+.answer .rows b{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.answer .fine{font-size:13px;opacity:.7}
+
+/* pricing */
+.price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.price{grid-template-columns:1fr}}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:14px;align-content:start}
+.pcard .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.pcard h3{font-size:28px;font-weight:800}
+.pcard ul{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:6px}
+.notdept{margin-top:16px;padding:20px 24px;border-radius:var(--r);background:var(--accent-soft);display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+.notdept b{font-family:var(--display);font-size:19px}
+.notdept p{color:var(--muted);margin-top:4px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.step{border-top:3px solid var(--accent);padding-top:16px;display:grid;gap:8px;align-content:start}
+.step .n{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.step h3{font-size:21px;font-weight:700}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding-block:18px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:20px}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px;max-width:70ch}
+
+/* book */
+.book{background:var(--deep);color:var(--on-deep);border-radius:16px;padding:44px clamp(20px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;margin-block:76px}
+@media (max-width:820px){.book{grid-template-columns:1fr}}
+.book h2{font-size:clamp(32px,4.4vw,48px);font-weight:800}
+.book p{opacity:.82;margin-top:14px}
+.book ul{margin:0;padding-left:20px;display:grid;gap:6px;opacity:.9}
+.book .btn{background:#FFFFFF;color:#0F2747}
+.book .btn.ghost{background:transparent;color:var(--on-deep);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--on-deep) 40%,transparent)}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.swap{animation:in .35s ease}@keyframes in{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <div class="logo"><svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="var(--deep)"/><path d="M13 19.5V11m0 0c0-3.2 2.4-5.2 5.5-5.2 0 3.2-2.4 5.2-5.5 5.2Zm0 2.4c0-2.6-2-4.3-4.6-4.3 0 2.6 2 4.3 4.6 4.3Z" fill="none" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Seedline Labs</div>
+  <nav><a href="#services">Services</a><a href="#demo">Demo</a><a href="#roi">Calculator</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  <a class="btn cal" href="#book">Book a call</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px">Pick your trade</div>
+      <div class="switch" role="tablist" aria-label="Choose your industry">
+        <button class="tab" role="tab" id="tab-pool" data-n="pool" aria-selected="true"><b>Pool companies</b><span>Builders &amp; renovation</span></button>
+        <button class="tab" role="tab" id="tab-concrete" data-n="concrete" aria-selected="false"><b>Concrete &amp; GCs</b><span>Flatwork, foundations, general contracting</span></button>
+      </div>
+    </div>
+    <div class="swap" style="display:grid;gap:22px">
+      <h1 id="h1"></h1>
+      <p class="lede" id="lede"></p>
+      <div class="ctas"><a class="btn cal" href="#book">Book a free AI audit</a><a class="btn ghost demoBtn" href="#demo">▶ Try the live demo</a></div>
+      <div class="ticker"><span><b>Answers every call</b>, day or night</span><span><b>Texts back new leads</b> in under a minute</span><span><b>Live in about 2 weeks</b></span></div>
+    </div>
+  </div>
+
+  <section class="pain">
+    <div><div class="eyebrow" style="margin-bottom:12px">Where jobs slip away</div><h2 id="painH"></h2></div>
+    <ul id="painList"></ul>
+  </section>
+
+  <section id="services">
+    <div class="head"><h2>What we set up for you</h2><p id="svcIntro"></p></div>
+    <div class="grid" id="svcGrid"></div>
+  </section>
+
+  <section id="demo">
+    <div class="head"><h2>Hear it on a real call</h2><p id="demoIntro"></p></div>
+    <div class="demo">
+      <div class="call" id="callLog"></div>
+      <div class="after">
+        <div class="eyebrow">What happens after the call</div>
+        <ul id="afterList"></ul>
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:12px">
+          <b style="font-family:var(--display);font-size:20px">Try it yourself, live</b>
+          <ul style="margin:0;padding-left:20px;color:var(--muted);display:grid;gap:4px;font-size:15.5px"><li>Talk to our AI receptionist out loud. It will book you in.</li><li>Watch missed-call text-back fire in real time.</li><li>See the follow-up texts and emails go out.</li></ul>
+          <a class="btn demoBtn" href="#book">▶ Open the live demo</a>
+          <span style="font-size:13px;color:var(--muted)">Opens in a new tab. Uses your microphone for the voice demo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roi">
+    <div class="head"><h2>How much is this costing you?</h2><p>Answer four quick questions. Use your best guess. There are no wrong answers.</p></div>
+    <div class="roi">
+      <div class="qs">
+        <div class="q">
+          <label for="q-job">1. What is a typical job worth to you?</label>
+          <div class="money"><span>$</span><input id="q-job" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="q">
+          <span class="ql" id="ql-miss">2. About how many calls do you miss in a week?</span>
+          <p class="hint">Calls that go to voicemail or ring out while you're busy.</p>
+          <div class="stepper" role="group" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="-1" aria-label="One less">−</button><input id="q-miss" inputmode="numeric" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="1" aria-label="One more">+</button></div>
+        </div>
+        <div class="q">
+          <span class="ql" id="ql-leads">3. How many leads come in online each week?</span>
+          <p class="hint">Website forms, Facebook, Google, Angi, HomeAdvisor and so on.</p>
+          <div class="stepper" role="group" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="-1" aria-label="One less">−</button><input id="q-leads" inputmode="numeric" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="1" aria-label="One more">+</button></div>
+        </div>
+        <div class="q">
+          <span class="ql" id="ql-speed">4. How fast do you usually call those leads back?</span>
+          <div class="choices" role="group" aria-labelledby="ql-speed" id="speed">
+            <button type="button" data-v="0">Within 5 minutes</button>
+            <button type="button" data-v="0.2">Within an hour</button>
+            <button type="button" data-v="0.35">Later that day</button>
+            <button type="button" data-v="0.5">Next day or later</button>
+          </div>
+        </div>
+      </div>
+      <div class="answer" aria-live="polite">
+        <div class="lbl">You could be leaving about</div>
+        <div class="big" id="a-total"></div>
+        <div class="per">on the table every year. That's roughly <b id="a-jobs"></b> jobs.</div>
+        <div class="rows">
+          <div><span>From missed calls</span><b id="a-miss"></b></div>
+          <div><span>From slow callbacks</span><b id="a-slow"></b></div>
+        </div>
+        <a class="btn cal" href="#book" style="background:#FFFFFF;color:#0F2747">Show me how to get it back</a>
+        <p class="fine" id="a-fine"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="head"><h2>How pricing works</h2><p>Clear and simple. We quote your setup and monthly fee on the audit call once we know which systems you need.</p></div>
+    <div class="price">
+      <div class="pcard">
+        <div class="when">One time</div>
+        <h3>Setup fee</h3>
+        <ul><li>We build your AI systems around how your business works</li><li>Connect your phone number, calendar and CRM</li><li>Train the AI on your services, service area and pricing</li><li>Test everything before it goes live</li><li>A quick walkthrough so you know where everything is</li></ul>
+      </div>
+      <div class="pcard">
+        <div class="when">Every month</div>
+        <h3>Monthly fee</h3>
+        <ul><li>Usage: AI call minutes, texts and emails</li><li>Hosting and keeping every system running</li><li>Minor tweaks, like updating hours, prices or a script</li><li>We monitor everything and handle any issues fast</li></ul>
+      </div>
+      <div class="pcard">
+        <div class="when">Only if you want it</div>
+        <h3>New additions</h3>
+        <ul><li>New systems or features down the road</li><li>Adding a new service line, location or trade</li><li>Custom builds beyond your original setup</li><li>Quoted separately, before any work starts</li></ul>
+      </div>
+    </div>
+    <div class="notdept">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="var(--accent)"/><path d="M8 13.5l3.2 3.2L18.5 9" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><b>It runs on its own.</b><p>Once it's live, the AI answers your calls, texts back your leads and follows up for you, so you don't need to hire anyone or learn anything new. You just show up to the appointments it books. We keep it running in the background and handle anything that comes up, fast.</p></div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="head"><h2>Live in about two weeks</h2><p>You keep running jobs. We build, connect and test everything around how your office already works.</p></div>
+    <div class="steps">
+      <div class="step"><div class="n">Day 1</div><h3>Free audit call</h3><p>We look at your calls, leads and callback times, and show you where jobs slip through.</p></div>
+      <div class="step"><div class="n">Days 2–10</div><h3>We build it</h3><p>Voice agent trained on your business, CRM set up, follow-up texts written.</p></div>
+      <div class="step"><div class="n">Days 11–14</div><h3>Test and go live</h3><p>We test it before your customers ever see it, give you a quick walkthrough so you know where everything is, and switch it on.</p></div>
+      <div class="step"><div class="n">After launch</div><h3>It runs on its own</h3><p>The AI handles calls, callbacks and follow-up. You show up to booked appointments. We monitor it and keep it running smoothly.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="head"><h2>Questions</h2></div>
+    <details><summary>Will the AI sound like a robot to my customers?</summary><p>No. It uses a natural voice, knows your services and service area, and passes the call to you or your office the moment a caller asks for a person.</p></details>
+    <details><summary>Do I need to be good with computers?</summary><p>No. We set everything up and handle the tech. You get booked appointments on your calendar and a text when something needs you.</p></details>
+    <details><summary>Do I have to change my phone number or software?</summary><p>Usually not. We connect to what you already use. If you're running off a notebook and text messages, we set up a simple system for you.</p></details>
+    <details><summary>How does pricing work?</summary><p>A one-time setup fee to build your systems and show you how they work. Then a monthly fee that covers usage, monitoring, support and minor tweaks. New systems or features you want added later are quoted separately. We quote the setup and monthly fee on your free audit call.</p></details>
+    <details><summary>What if I need help?</summary><p>Just reach out and we handle it fast. Support is included in your monthly fee, and we monitor your systems so most things are handled before you ever notice.</p></details>
+    <details><summary>Do I need to hire someone to run this?</summary><p>No. The AI does the work: answering calls, texting back leads and following up. You don't need to hire anyone or learn new software. We keep it running in the background so you can focus on the jobs and growing your business.</p></details>
+    <details><summary>What is AEO?</summary><p>Answer Engine Optimization. More homeowners now ask ChatGPT, Google's AI answers or Siri who to hire. AEO sets up your website, reviews and listings so those tools recommend you by name.</p></details>
+    <details><summary>How soon will I see results?</summary><p>Missed calls and slow callbacks get fixed the day we go live. AEO and long-term follow-up build over the next 60 to 90 days.</p></details>
+  </section>
+
+  <div class="book" id="book">
+    <div>
+      <h2>Stop losing jobs to the next company that picks up</h2>
+      <p>Book a free 20-minute AI audit. We'll show you how many calls and leads you're losing and exactly what we'd set up to get them back.</p>
+    </div>
+    <div style="display:grid;gap:16px;align-content:center">
+      <ul><li>See what missed calls are costing you</li><li>Hear a live AI demo for your company</li><li>Get a simple plan, no obligation</li></ul>
+      <a class="btn calOut" href="#book" target="_blank" rel="noopener">Pick a time on Calendly →</a>
+      <a class="btn ghost demoOut" href="#demo" target="_blank" rel="noopener">▶ Try the live demo first</a>
+      <p style="font-size:14px;margin:0;opacity:.7">20 minutes · Zoom or phone</p>
+    </div>
+    <div id="calEmbed" hidden style="grid-column:1/-1;background:#FFFFFF;border-radius:12px;overflow:hidden;min-height:700px"></div>
+  </div>
+
+  <footer><span>© 2026 Seedline Labs · AI systems for pool and concrete contractors</span><span>seedlinelabs</span></footer>
+</main>
+
+<script>
+/* ===== Paste your links here ===== */
+const CALENDLY_URL = "https://calendly.com/seedlinelabs/new-meeting-1";
+const EMBED_CALENDAR = true; // true on the live site: shows the calendar right on the page
+const DEMO_URL     = "https://seedlinelabs.luminasales.io/seedline-labs-demo";
+/* ================================= */
+
+const N={
+ pool:{
+  h1:'Every pool lead <em>answered</em>, followed up and booked.',
+  lede:'Seedline Labs sets up AI systems for pool builders and renovation companies. We answer every call, text back every lead in under a minute, and keep buyers warm until they sign.',
+  painH:'Pool buyers call three builders. They hire the one who calls back.',
+  pain:[
+   ['Calls go to voicemail mid-dig','Your crew is on site and the office is slammed in spring. A homeowner with a $70k project hangs up and calls the next builder on Google.'],
+   ['Leads wait hours for a callback','A Friday-night form fill gets a call Monday. By then they have two consultations booked.'],
+   ['Buyers go cold','Pool buyers take weeks or months to decide. Without follow-up, they forget who you are.'],
+   ['No idea what your ads bring in','Leads live in texts, sticky notes and inboxes, so nobody knows which source books actual pools.']],
+  svcIntro:'Built for how pool companies sell: big jobs, long decisions and a busy season that buries the office.',
+  svc:[
+   ['AI Voice Agent','Answers every call 24/7 in a natural voice. Asks new build or renovation, budget and timeline, then books the consultation on your calendar.'],
+   ['Speed to Lead','Every website, Google and Facebook lead gets a text and a call within 60 seconds, before they reach out to another builder.'],
+   ['Lead Nurture','Automatic texts and emails that keep buyers warm through design, financing and permits, plus off-season campaigns to fill spring build slots.'],
+   ['CRM Pipeline','One place to see every lead from first call to dig day: consult, design, proposal, contract, permit, build.'],
+   ['AEO','Get named when homeowners ask ChatGPT, Google AI or Siri for the best pool builder in your area.'],
+   ['Dashboards','Calls answered, leads by source, consults booked and jobs won, on one simple screen.'],
+   ['Custom Builds','Anything specific to your shop: financing pre-qualification, build-progress texts to customers, opening and closing reminders.']],
+  demoIntro:'A sample after-hours call to a pool builder. The AI asks the right questions and books the consultation while the owner is off the clock.',
+  call:[['ai','Thanks for calling Blue Ridge Pools, this is Ava. Are you looking at a new pool or work on an existing one?'],['cx','New pool. We just bought a house and the backyard is empty.'],['ai','Congrats on the new place. Are you thinking in-ground concrete, fiberglass, or not sure yet?'],['cx','Probably concrete. We want it done before next summer.'],['ai','That timing works well if we start design this winter. Do you have a rough budget in mind?'],['cx','Somewhere around sixty to eighty.'],['ai','Great. I have Thursday at 4 PM or Saturday at 10 AM for a free backyard consultation. Which works better?'],['cx','Saturday at 10.'],['ai','You\'re booked for Saturday at 10 AM. I\'ll text you a confirmation and a few photos of recent builds.']],
+  callMeta:['Sat 9:42 PM · after hours','Consult booked'],
+  after:[['Instantly','Lead saved in your CRM with budget, pool type and timeline'],['10 sec','Confirmation text and photos sent to the homeowner'],['1 min','You get a text summary and the call recording'],['Day before','Reminder text so they actually show up']],
+  calc:{job:65000,miss:3,leads:5,speed:'0.35',real:0.3,close:0.12,leadClose:0.08},
+  fine:'Based on these assumptions for pool companies: about 3 in 10 missed callers are real buyers, and you close about 1 in 8. You close about 1 in 12 online leads when you call fast, and fewer the longer they wait.'
+ },
+ concrete:{
+  h1:'Win the job <em>before</em> the other guy calls back.',
+  lede:'Seedline Labs sets up AI systems for concrete companies and general contractors. We pick up while your crew is pouring, text back every lead in under a minute, and follow up on every estimate until it\'s signed.',
+  painH:'You can\'t answer the phone with a bull float in your hands.',
+  pain:[
+   ['Calls missed during pours','A slab doesn\'t wait. Neither does the homeowner who wants a driveway quote, so they call the next contractor.'],
+   ['Estimates sent, then nothing','You drive out, measure, send a number, and never follow up. Half of those jobs go to whoever stayed in touch.'],
+   ['Slow callbacks on web leads','Leads that sit overnight are already talking to two other crews by morning.'],
+   ['Rain days wreck the schedule','Every rain day means a dozen calls and texts to reschedule, all by hand.']],
+  svcIntro:'Built for how concrete and GC work runs: fast quotes, lots of estimates and a crew that\'s always on site.',
+  svc:[
+   ['AI Voice Agent','Answers every call while you work. Asks project type (driveway, patio, foundation, flatwork), size and timeline, then books the estimate visit.'],
+   ['Speed to Lead','Every website, Google and Facebook lead gets a text and a call within 60 seconds.'],
+   ['Lead Nurture','Automatic follow-up on every open estimate until it\'s signed, plus campaigns to bring back past customers for sealing and repeat work.'],
+   ['CRM Pipeline','Lead, estimate, scheduled pour and invoice, in one place your whole team can see.'],
+   ['AEO','Show up when people ask ChatGPT, Google AI or Siri for a concrete contractor near them.'],
+   ['Dashboards','Estimates sent vs. won, average job size, where leads come from and revenue, on one simple screen.'],
+   ['Custom Builds','Rain-day reschedule texts, sub-bid intake for GCs, review requests after every pour, whatever your shop needs.']],
+  demoIntro:'A sample call to a concrete company during a pour. The AI asks the right questions and books the estimate while the crew keeps working.',
+  call:[['ai','Thanks for calling Ironline Concrete, this is Ava. What kind of project can we help with?'],['cx','I need my driveway torn out and redone.'],['ai','We do a lot of those. Roughly how big is it, a one-car or two-car driveway?'],['cx','Two-car, plus the walkway to the front door.'],['ai','Got it. Any interest in stamped or colored concrete, or a standard broom finish?'],['cx','Maybe stamped on the walkway.'],['ai','I can have an estimator come measure. Tomorrow at 8 AM or Wednesday at 3 PM?'],['cx','Wednesday works.'],['ai','You\'re set for Wednesday at 3 PM. I\'ll text the confirmation and some stamped patterns to look at.']],
+  callMeta:['Tue 11:15 AM · crew on a pour','Estimate booked'],
+  after:[['Instantly','Lead saved in your CRM with project type, size and finish'],['10 sec','Confirmation text with stamped pattern options sent'],['1 min','You get a text summary and the call recording'],['3 days later','Estimate follow-up starts, until it\'s signed']],
+  calc:{job:7500,miss:6,leads:10,speed:'0.35',real:0.5,close:0.3,leadClose:0.25},
+  fine:'Based on these assumptions for concrete companies: about half of missed callers are real customers, and you close about 3 in 10. You close about 1 in 4 online leads when you call fast, and fewer the longer they wait.'
+ }
+};
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+let cur='pool', speed='0.35';
+
+function num(id){return Math.max(0,parseInt(String($(id).value).replace(/[^0-9]/g,''))||0)}
+function calc(){
+  const c=N[cur].calc, job=num('q-job');
+  const missJobs=num('q-miss')*52*c.real*c.close;
+  const slowJobs=num('q-leads')*52*c.leadClose*(+speed);
+  $('a-miss').textContent=money(missJobs*job);
+  $('a-slow').textContent=money(slowJobs*job);
+  $('a-total').textContent=money((missJobs+slowJobs)*job);
+  $('a-jobs').textContent=Math.round(missJobs+slowJobs);
+}
+function setSpeed(v){speed=v;document.querySelectorAll('#speed button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));calc()}
+function setNiche(n){
+  cur=n; const d=N[n];
+  document.body.dataset.niche=n;
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.n===n));
+  $('h1').innerHTML=d.h1; $('lede').textContent=d.lede;
+  $('painH').textContent=d.painH;
+  $('painList').innerHTML=d.pain.map(p=>'<li><span class="x">✕</span><div><strong>'+p[0]+'</strong><p>'+p[1]+'</p></div></li>').join('');
+  $('svcIntro').textContent=d.svcIntro;
+  const tags=['Never miss a call','Never miss a lead','Close more jobs','Close more jobs','Get found','See everything','Built for you'];
+  $('svcGrid').innerHTML=d.svc.map((s,i)=>'<div class="svc'+(i===6?' wide':'')+'"><span class="tag">'+tags[i]+'</span><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>').join('');
+  $('demoIntro').textContent=d.demoIntro;
+  $('callLog').innerHTML='<div class="meta"><span>'+d.callMeta[0]+'</span><b>● '+d.callMeta[1]+'</b></div>'+d.call.map(m=>'<div class="msg '+m[0]+'"><small>'+(m[0]==='ai'?'AI agent':'Caller')+'</small>'+m[1]+'</div>').join('');
+  $('afterList').innerHTML=d.after.map(a=>'<li><span>'+a[0]+'</span><div>'+a[1]+'</div></li>').join('');
+  $('q-job').value=d.calc.job.toLocaleString('en-US'); $('q-miss').value=d.calc.miss; $('q-leads').value=d.calc.leads;
+  $('a-fine').textContent=d.fine;
+  setSpeed(d.calc.speed);
+  document.querySelectorAll('.swap').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
+  try{localStorage.setItem('niche',n)}catch(e){}
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{setNiche(t.dataset.n);try{history.replaceState(null,'','#'+t.dataset.n)}catch(e){}}));
+document.querySelectorAll('.stepper button').forEach(b=>b.addEventListener('click',()=>{const i=$(b.dataset.t);i.value=Math.max(0,num(b.dataset.t)+(+b.dataset.d));calc()}));
+document.querySelectorAll('#speed button').forEach(b=>b.addEventListener('click',()=>setSpeed(b.dataset.v)));
+['q-miss','q-leads'].forEach(id=>$(id).addEventListener('input',calc));
+$('q-job').addEventListener('input',e=>{const v=num('q-job');e.target.value=v?v.toLocaleString('en-US'):'';calc()});
+
+/* wire up links once you paste them above */
+if(CALENDLY_URL && EMBED_CALENDAR){
+  // Live site: calendar sits on the page, so every booking button scrolls to it
+  const box=$('calEmbed'); box.hidden=false;
+  box.innerHTML='<div class="calendly-inline-widget" data-url="'+CALENDLY_URL+'?hide_gdpr_banner=1&primary_color=1d5fd1" style="min-width:320px;height:700px"></div>';
+  const s=document.createElement('script'); s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true; document.body.appendChild(s);
+  document.querySelectorAll('.cal').forEach(a=>{a.href='#calEmbed'});
+  document.querySelectorAll('.calOut').forEach(a=>{a.textContent='Or open the calendar in a new tab →';a.href=CALENDLY_URL;a.target='_blank';a.rel='noopener'});
+} else if(CALENDLY_URL){document.querySelectorAll('.calOut,.cal').forEach(a=>{a.href=CALENDLY_URL;a.target='_blank';a.rel='noopener'})}
+else{document.querySelectorAll('.calOut').forEach(a=>{a.removeAttribute('target')})}
+if(DEMO_URL){document.querySelectorAll('.demoBtn,.demoOut').forEach(a=>{a.href=DEMO_URL;a.target='_blank';a.rel='noopener'})}
+else{document.querySelectorAll('.demoOut').forEach(a=>{a.removeAttribute('target')})}
+
+let start='pool';
+const h=location.hash.replace('#','');
+if(N[h])start=h; else {try{const s=localStorage.getItem('niche');if(N[s])start=s}catch(e){}}
+setNiche(start);
+</script>
+</body>
+</html>
