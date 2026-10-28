@@ -164,6 +164,24 @@ section{padding-block:96px}
 .svc p{color:var(--muted);font-size:16px}
 .svc .res{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--good);letter-spacing:.02em}
 
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:14px}
+.plan .for{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.plan h3{font-size:26px;font-weight:800}
+.plan>p{color:var(--muted);font-size:16px}
+.plan ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px;font-size:15.5px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{flex:none;margin-top:4px}
+.plan .btn{margin-top:auto;align-self:stretch}
+.plan .sp{flex:1}
+.plan.feat{background:var(--deep);color:var(--on-deep);border-color:transparent;box-shadow:0 30px 60px -30px rgba(15,39,71,.5)}
+.plan.feat .for{color:#9CC0FF}
+.plan.feat>p{color:var(--on-deep);opacity:.82}
+.plan.feat .btn{background:#FFFFFF;color:#0F2747}
+.pill{align-self:flex-start;font-size:12px;font-weight:700;background:#9CC0FF;color:#0F2747;border-radius:20px;padding:3px 10px}
+
 /* flow */
 .flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
 .flow::before{content:"";position:absolute;top:27px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 16px);opacity:.5}
@@ -213,8 +231,8 @@ footer a{color:inherit}
   <div class="hero">
     <div>
       <div class="eyebrow">Lead generation + AI systems for home service companies</div>
-      <h1>We bring you leads. <em>Then make sure</em> none go cold.</h1>
-      <p class="lede">We set up lead generation and the backend systems to capture every lead, respond in under a minute, and nurture them until they book, so you stop losing jobs to whoever answers first.</p>
+      <h1>We bring you leads and <em>make sure they get booked.</em></h1>
+      <p class="lede">We run ads for home service companies and set up the systems behind them, so every call gets answered, every lead hears back in under a minute, and no one goes cold before they book.</p>
       <div class="ctas"><a class="btn" href="#book">Book a free audit call</a><a class="btn ghost" href="#services">See what we do</a></div>
       <div class="checks">
         <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live in about 2 weeks</span>
@@ -283,6 +301,54 @@ footer a{color:inherit}
         <h3>Lead Generation with Ads</h3>
         <p>Facebook and Instagram ads that bring in homeowners looking for your service, sent straight into your AI follow-up so every lead gets worked.</p>
         <span class="res">→ More leads, and none of them wasted</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="options" style="border-top:1px solid var(--line)">
+    <div class="head">
+      <div class="eyebrow">Ways to work with us</div>
+      <h2>Start with what you need</h2>
+      <p>Most home service companies start with one of these. We'll help you pick on the call.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="for">Missing calls?</div>
+        <h3>AI Voice Agent</h3>
+        <p>For busy owners and crews who can't always pick up the phone.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Answers every call, day or night</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Books appointments on your calendar</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Texts back missed calls</li>
+        </ul>
+        <div class="sp"></div>
+        <a class="btn ghost" href="#book">Book a call</a>
+      </div>
+      <div class="plan">
+        <div class="for">Already running ads?</div>
+        <h3>Speed to Lead</h3>
+        <p>For companies getting leads but not reaching them fast enough.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every lead hears back in under a minute</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Follow-up texts until they book</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>All your leads in one CRM</li>
+        </ul>
+        <div class="sp"></div>
+        <a class="btn ghost" href="#book">Book a call</a>
+      </div>
+      <div class="plan feat">
+        <span class="pill">Full package</span>
+        <div class="for">Want more jobs?</div>
+        <h3>Leads + Follow-Up</h3>
+        <p>We bring you the leads and make sure they get booked.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".25"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Facebook and Instagram ads run for you</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".25"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Speed to lead and AI voice agent</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".25"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead nurture and old-lead reactivation</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".25"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM built for your business</li>
+        </ul>
+        <div class="sp"></div>
+        <a class="btn" href="#book">Book a call</a>
       </div>
     </div>
   </section>
