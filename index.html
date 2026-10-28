@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Seedline Labs sets up AI voice agents, speed to lead, follow-up and CRM systems for pool companies, concrete companies and general contractors.">
+<meta name="description" content="Seedline Labs sets up lead generation and the backend systems to capture and nurture every lead (AI voice agents, speed to lead, follow-up, reactivation and CRMs) for home service companies.">
 <title>Seedline Labs</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<!-- Link preview  -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seedline Labs">
 <meta property="og:title" content="Seedline Labs">
-<meta property="og:description" content="AI voice agents, speed to lead and follow-up for pool and concrete companies.">
+<meta property="og:description" content="We bring you leads, then make sure none go cold. Lead generation and AI follow-up for home service companies.">
 <meta property="og:url" content="https://www.seedlinelabs.com/">
 <meta property="og:image" content="https://www.seedlinelabs.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -22,242 +21,320 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-/* Layout: steady, plain-spoken contractor site — navy ink, one confident blue, big readable controls; a trade switcher drives every section */
 :root{
-  --bg:#F5F7FA; --surface:#FFFFFF; --sunk:#EDF1F6; --ink:#0F1E33; --muted:#4F5E76; --line:#D6DEE8;
+  --bg:#F5F7FA; --surface:#FFFFFF; --sunk:#EDF1F6; --ink:#0F1E33; --muted:#4F5E76; --line:#DCE3EC;
   --accent:#1D5FD1; --accent-soft:#E3ECFB; --accent-ink:#FFFFFF;
-  --deep:#0F2747; --on-deep:#F0F4FA;
-  --good:#16794A; --bad:#B2382A;
+  --deep:#0F2747; --on-deep:#F0F4FA; --good:#16794A;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-  --r:12px;
+  --r:16px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#23344D;
+  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#22334B;
   --accent:#5E96F2; --accent-soft:#16294A; --accent-ink:#06101F; --deep:#132B50; --on-deep:#EEF3FB;
-  --good:#4CC583; --bad:#EF7A66; color-scheme:dark}}
+  --good:#4CC583; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#23344D;
+  --bg:#0A1322; --surface:#111D30; --sunk:#0D1828; --ink:#E6ECF5; --muted:#9AA9C0; --line:#22334B;
   --accent:#5E96F2; --accent-soft:#16294A; --accent-ink:#06101F; --deep:#132B50; --on-deep:#EEF3FB;
-  --good:#4CC583; --bad:#EF7A66; color-scheme:dark}
+  --good:#4CC583; color-scheme:dark}
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0}
-img{max-width:100%}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px}
+img{max-width:100%;display:block}
 [hidden]{display:none!important}
 .wrap{max-width:1120px;margin-inline:auto}
-h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--display);line-height:1.06;margin:0;text-wrap:balance;letter-spacing:-.02em}
 p{margin:0}
 a{color:var(--accent)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);font-weight:700;border:0;border-radius:10px;padding:14px 22px;font-size:16px;text-decoration:none;cursor:pointer;font-family:var(--body)}
-.btn:hover{filter:brightness(1.08)}
-.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-section{padding-block:76px;border-top:1px solid var(--line)}
-.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:36px}
-.head h2{font-size:clamp(32px,4.4vw,48px);font-weight:800}
-.head p{color:var(--muted);max-width:48ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);font-weight:700;border-radius:12px;padding:15px 24px;font-size:16px;text-decoration:none;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
 
 /* header */
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);margin-inline:-20px;padding-inline:20px;border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;margin-inline:-20px;padding-inline:20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{font-family:var(--display);font-weight:800;font-size:21px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
-.logo svg{width:26px;height:26px}
-nav{display:flex;gap:24px;font-weight:600;font-size:15px}
-nav a{color:var(--ink);text-decoration:none}
-nav a:hover{color:var(--accent)}
-@media (max-width:800px){nav{display:none}}
+.logo{font-family:var(--display);font-weight:800;font-size:21px;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.logo svg{width:28px;height:28px}
+nav{display:flex;gap:28px;font-weight:600;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+@media (max-width:900px){nav{display:none}.bar .btn{padding:11px 16px;font-size:15px}}
 
 /* hero */
-.hero{padding-block:52px 64px;display:grid;gap:34px}
-.switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:640px}
-.tab{all:unset;cursor:pointer;border-radius:var(--r);padding:14px 18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;gap:2px}
-.tab b{font-family:var(--display);font-size:19px;font-weight:700}
-.tab span{font-size:13.5px;color:var(--muted)}
-.tab[aria-selected="true"]{background:var(--deep);color:var(--on-deep);box-shadow:inset 0 0 0 2px var(--accent)}
-.tab[aria-selected="true"] span{color:var(--on-deep);opacity:.8}
-.tab:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.hero h1{font-size:clamp(40px,6.6vw,76px);font-weight:800;max-width:17ch}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;padding-block:72px 88px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:48px;padding-block:48px 64px}}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:800;margin-top:16px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lede{font-size:19px;color:var(--muted);max-width:60ch}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-.ticker{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:15px;color:var(--muted)}
-.ticker span::before{content:"✓ ";color:var(--good);font-weight:700}
-.ticker b{color:var(--ink)}
+.lede{font-size:19px;color:var(--muted);max-width:52ch;margin-top:22px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font-size:15px;color:var(--muted)}
+.checks span{display:inline-flex;align-items:center;gap:8px}
+.checks svg{flex:none}
 
-/* pain */
-.pain{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
-@media (max-width:820px){.pain{grid-template-columns:1fr;gap:28px}}
-.pain h2{font-size:clamp(30px,4vw,44px);font-weight:800}
-.pain ul{list-style:none;margin:0;padding:0}
-.pain li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
-.pain li:first-child{padding-top:0}
-.pain .x{width:26px;height:26px;border-radius:50%;background:color-mix(in srgb,var(--bad) 14%,transparent);color:var(--bad);display:grid;place-items:center;font-weight:700;font-size:13px}
-.pain li strong{display:block;font-size:18px}
-.pain li p{color:var(--muted)}
+/* phone visual */
+.stage{position:relative;display:grid;place-items:center;padding:24px 0}
+.stage::before{content:"";position:absolute;inset:6% 4%;border-radius:40px;background:radial-gradient(60% 60% at 50% 40%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
+.phone{position:relative;width:min(320px,82vw);background:var(--surface);border-radius:38px;padding:14px;box-shadow:0 0 0 1px var(--line),0 30px 60px -20px rgba(15,39,71,.35)}
+.screen{border-radius:28px;background:var(--sunk);padding:18px 14px 20px;display:grid;gap:10px;min-height:470px;align-content:start}
+.notch{width:90px;height:6px;border-radius:6px;background:var(--line);margin:0 auto 6px}
+.thread-h{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.av{width:34px;height:34px;border-radius:50%;background:var(--deep);display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px;flex:none}
+.thread-h b{display:block;font-size:14px;line-height:1.2}
+.thread-h small{font-size:12px;color:var(--muted)}
+.sys{justify-self:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+.sys.miss{color:#B2382A}
+.bub{max-width:84%;padding:10px 13px;border-radius:18px;font-size:14px;line-height:1.45}
+.bub.in{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:6px}
+.bub.out{background:var(--accent);color:var(--accent-ink);justify-self:end;border-bottom-right-radius:6px}
+.bub .t{display:block;font-size:10.5px;opacity:.7;margin-top:3px}
+.float{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:0 14px 30px -12px rgba(15,39,71,.3);display:flex;align-items:center;gap:10px;font-size:13.5px;line-height:1.3}
+.float b{display:block;font-size:14px}
+.float small{color:var(--muted)}
+.stage{padding:44px 0}
+.f1{top:0;left:0}
+.f2{bottom:0;right:0}
+.dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}
+@media (prefers-reduced-motion:no-preference){
+  .screen>*{animation:pop .5s both}
+  .screen>*:nth-child(3){animation-delay:.3s}.screen>*:nth-child(4){animation-delay:.9s}.screen>*:nth-child(5){animation-delay:1.5s}
+  .screen>*:nth-child(6){animation-delay:2.1s}.screen>*:nth-child(7){animation-delay:2.7s}.screen>*:nth-child(8){animation-delay:3.3s}
+  .f2{animation:pop .5s 3.8s both}
+  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+
+/* trades strip */
+.trades{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;padding-block:28px;border-block:1px solid var(--line)}
+.trades span{font-weight:600;font-size:15px;color:var(--muted);padding:6px 14px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.trades .lbl{background:none;border:0;padding-inline:4px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* sections */
+section{padding-block:96px}
+@media (max-width:760px){section{padding-block:72px}}
+.head{max-width:640px;margin-bottom:48px}
+.head h2{font-size:clamp(32px,4.4vw,50px);font-weight:800;margin-top:12px}
+.head p{color:var(--muted);margin-top:16px;font-size:18px}
 
 /* services */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
-.svc .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.svc h3{font-size:22px;font-weight:700}
-.svc p{color:var(--muted);font-size:15.5px}
-.svc.wide{grid-column:1/-1;background:var(--accent-soft);border-color:transparent}
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:980px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.svcs{grid-template-columns:1fr}}
 
 /* demo */
-.demo{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:start}
-@media (max-width:860px){.demo{grid-template-columns:1fr}}
-.call{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;min-width:0}
-.call .meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12px;color:var(--muted);padding-bottom:10px;border-bottom:1px dashed var(--line)}
-.call .meta b{color:var(--good)}
-.msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:15.5px}
-.msg small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
-.msg.ai{background:var(--accent-soft);border-bottom-left-radius:4px}
-.msg.cx{background:var(--sunk);justify-self:end;border-bottom-right-radius:4px}
-.after{display:grid;gap:16px;align-content:start}
-.after ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
-.after li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;font-size:15.5px}
-.after li span{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;padding-top:3px;min-width:60px}
+.demo-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(16px,3vw,28px);min-height:200px}
+.demo-alt{text-align:center;margin-top:16px;font-size:15px}
 
 /* roi */
 .roi{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
 @media (max-width:900px){.roi{grid-template-columns:1fr}}
-.qs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);display:grid;gap:28px;min-width:0}
+.qs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);display:grid;gap:28px;min-width:0}
 .q{display:grid;gap:12px}
-.q label,.q .ql{font-family:var(--display);font-size:21px;font-weight:700;line-height:1.25}
+.q label,.q .ql{font-family:var(--display);font-size:20px;font-weight:700;line-height:1.25}
 .q .hint{font-size:14.5px;color:var(--muted);margin-top:-6px}
 .stepper{display:flex;align-items:center;gap:10px}
-.stepper button{all:unset;cursor:pointer;width:54px;height:54px;border-radius:10px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;place-items:center;font-size:26px;font-weight:700;color:var(--ink)}
+.stepper button{all:unset;cursor:pointer;width:52px;height:52px;border-radius:12px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;place-items:center;font-size:24px;font-weight:700;color:var(--ink)}
 .stepper button:hover{background:var(--accent-soft)}
 .stepper button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.stepper input{width:120px;height:54px;text-align:center;font:700 24px var(--mono);border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
-.money{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);max-width:260px;height:54px;padding-inline:14px}
-.money span{font:700 24px var(--mono);color:var(--muted)}
-.money input{all:unset;width:100%;font:700 24px var(--mono);color:var(--ink);padding-left:6px}
+.stepper input{width:110px;height:52px;text-align:center;font:700 22px var(--mono);border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.money{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);max-width:260px;height:52px;padding-inline:14px}
+.money span{font:700 22px var(--mono);color:var(--muted)}
+.money input{all:unset;width:100%;font:700 22px var(--mono);color:var(--ink);padding-left:6px}
 .money:focus-within{outline:3px solid var(--accent);outline-offset:2px}
 .choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.choices button{all:unset;cursor:pointer;border-radius:10px;padding:14px;text-align:center;font-weight:700;font-size:16px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line)}
+.choices button{all:unset;cursor:pointer;border-radius:12px;padding:14px;text-align:center;font-weight:700;font-size:15.5px;background:var(--sunk);box-shadow:inset 0 0 0 1.5px var(--line)}
 .choices button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:none}
 .choices button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.answer{background:var(--deep);color:var(--on-deep);border-radius:var(--r);padding:clamp(22px,3vw,32px);display:grid;gap:18px;position:sticky;top:90px}
+.answer{background:var(--deep);color:var(--on-deep);border-radius:var(--r);padding:clamp(22px,3vw,34px);display:grid;gap:18px;position:sticky;top:96px}
 @media (max-width:900px){.answer{position:static}}
 .answer .lbl{font-size:17px;opacity:.85}
-.answer .big{font-family:var(--display);font-weight:800;font-size:clamp(48px,7vw,72px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.answer .big{font-family:var(--display);font-weight:800;font-size:clamp(46px,7vw,70px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .answer .per{font-size:17px;opacity:.85}
-.answer .rows{display:grid;gap:0;border-top:1px solid color-mix(in srgb,var(--on-deep) 20%,transparent)}
-.answer .rows div{display:flex;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid color-mix(in srgb,var(--on-deep) 20%,transparent);font-size:16px}
+.answer .rows{border-top:1px solid rgba(240,244,250,.2)}
+.answer .rows div{display:flex;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid rgba(240,244,250,.2);font-size:16px}
 .answer .rows b{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .answer .fine{font-size:13px;opacity:.7}
+.answer .btn{background:#FFFFFF;color:#0F2747}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:grid;gap:14px;align-content:start;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-3px);box-shadow:0 20px 40px -24px rgba(15,39,71,.35)}
+.ic{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.svc h3{font-size:24px;font-weight:700;margin-top:6px}
+.svc p{color:var(--muted);font-size:16px}
+.svc .res{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--good);letter-spacing:.02em}
 
-/* pricing */
-.price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-@media (max-width:900px){.price{grid-template-columns:1fr}}
-.pcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:14px;align-content:start}
-.pcard .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.pcard h3{font-size:28px;font-weight:800}
-.pcard ul{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:6px}
-.notdept{margin-top:16px;padding:20px 24px;border-radius:var(--r);background:var(--accent-soft);display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
-.notdept b{font-family:var(--display);font-size:19px}
-.notdept p{color:var(--muted);margin-top:4px}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:480px){.steps{grid-template-columns:1fr}}
-.step{border-top:3px solid var(--accent);padding-top:16px;display:grid;gap:8px;align-content:start}
-.step .n{font-family:var(--mono);font-size:13px;color:var(--muted)}
-.step h3{font-size:21px;font-weight:700}
-.step p{color:var(--muted);font-size:15.5px}
-
-/* faq */
-details{border-bottom:1px solid var(--line);padding-block:18px}
-summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:20px}
-details[open] summary::after{content:"–"}
-details p{color:var(--muted);margin-top:10px;max-width:70ch}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.flow::before{content:"";position:absolute;top:27px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 16px);opacity:.5}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr;gap:36px 20px}.flow::before{display:none}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+.st{display:grid;gap:10px;justify-items:center;text-align:center;position:relative}
+.st .n{width:56px;height:56px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;box-shadow:0 0 0 8px var(--bg)}
+.st:last-child .n{background:var(--accent);color:var(--accent-ink)}
+.st .time{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.st h3{font-size:20px;font-weight:700}
+.st p{color:var(--muted);font-size:15.5px;max-width:26ch}
+.note{margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;font-size:15.5px;color:var(--muted)}
+.note b{color:var(--ink)}
 
 /* book */
-.book{background:var(--deep);color:var(--on-deep);border-radius:16px;padding:44px clamp(20px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;margin-block:76px}
-@media (max-width:820px){.book{grid-template-columns:1fr}}
-.book h2{font-size:clamp(32px,4.4vw,48px);font-weight:800}
-.book p{opacity:.82;margin-top:14px}
-.book ul{margin:0;padding-left:20px;display:grid;gap:6px;opacity:.9}
-.book .btn{background:#FFFFFF;color:#0F2747}
-.book .btn.ghost{background:transparent;color:var(--on-deep);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--on-deep) 40%,transparent)}
+.book{background:var(--deep);color:var(--on-deep);border-radius:24px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px;align-items:start;margin-bottom:72px;position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(94,150,242,.35),transparent 65%);pointer-events:none}
+@media (max-width:900px){.book{grid-template-columns:1fr}}
+.book .eyebrow{color:#9CC0FF}
+.book h2{font-size:clamp(32px,4.4vw,48px);font-weight:800;margin-top:12px}
+.book p{opacity:.85;margin-top:16px}
+.book ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+.book li{display:flex;gap:10px;align-items:flex-start}
+.book li svg{flex:none;margin-top:4px}
+.me{display:flex;align-items:center;gap:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(240,244,250,.15)}
+.me img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.me b{display:block}
+.me small{opacity:.75;font-size:14px}
+.cal{position:relative;background:#FFFFFF;border-radius:16px;overflow:hidden;min-height:660px}
+.cal .fallback{display:grid;gap:14px;place-items:center;text-align:center;padding:48px 24px;color:#0F1E33}
+.cal .fallback .btn{background:#1D5FD1;color:#fff}
+.alt{display:block;text-align:center;margin-top:12px;font-size:14px;color:var(--on-deep);opacity:.8}
+
 footer{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
-@media (prefers-reduced-motion:no-preference){.swap{animation:in .35s ease}@keyframes in{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}}
+footer a{color:inherit}
 </style>
 </head>
 <body>
 
 <header><div class="wrap bar">
-  <div class="logo"><svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="var(--deep)"/><path d="M13 19.5V11m0 0c0-3.2 2.4-5.2 5.5-5.2 0 3.2-2.4 5.2-5.5 5.2Zm0 2.4c0-2.6-2-4.3-4.6-4.3 0 2.6 2 4.3 4.6 4.3Z" fill="none" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Seedline Labs</div>
-  <nav><a href="#services">Services</a><a href="#demo">Demo</a><a href="#roi">Calculator</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
-  <a class="btn cal" href="#book">Book a call</a>
+  <a class="logo" href="#top"><svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#0F2747"/><path d="M13 19.5V11m0 0c0-3.2 2.4-5.2 5.5-5.2 0 3.2-2.4 5.2-5.5 5.2Zm0 2.4c0-2.6-2-4.3-4.6-4.3 0 2.6 2 4.3 4.6 4.3Z" fill="none" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Seedline Labs</a>
+  <nav><a href="#services">What we do</a><a href="#how">How it works</a><a href="#demo">Demo</a><a href="#roi">Calculator</a></nav>
+  <a class="btn" href="#book">Book a call</a>
 </div></header>
 
-<main class="wrap">
+<main class="wrap" id="top">
   <div class="hero">
     <div>
-      <div class="eyebrow" style="margin-bottom:12px">Pick your trade</div>
-      <div class="switch" role="tablist" aria-label="Choose your industry">
-        <button class="tab" role="tab" id="tab-pool" data-n="pool" aria-selected="true"><b>Pool companies</b><span>Builders &amp; renovation</span></button>
-        <button class="tab" role="tab" id="tab-concrete" data-n="concrete" aria-selected="false"><b>Concrete &amp; GCs</b><span>Flatwork, foundations, general contracting</span></button>
+      <div class="eyebrow">Lead generation + AI systems for home service companies</div>
+      <h1>We bring you leads. <em>Then make sure</em> none go cold.</h1>
+      <p class="lede">We set up lead generation and the backend systems to capture every lead, respond in under a minute, and nurture them until they book, so you stop losing jobs to whoever answers first.</p>
+      <div class="ctas"><a class="btn" href="#book">Book a free audit call</a><a class="btn ghost" href="#services">See what we do</a></div>
+      <div class="checks">
+        <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live in about 2 weeks</span>
+        <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>We handle all the tech</span>
+        <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Works 24/7</span>
       </div>
     </div>
-    <div class="swap" style="display:grid;gap:22px">
-      <h1 id="h1"></h1>
-      <p class="lede" id="lede"></p>
-      <div class="ctas"><a class="btn cal" href="#book">Book a free AI audit</a><a class="btn ghost demoBtn" href="#live-demo">▶ Try the live demo</a></div>
-      <div class="ticker"><span><b>Answers every call</b>, day or night</span><span><b>Texts back new leads</b> in under a minute</span><span><b>Live in about 2 weeks</b></span></div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="phone"><div class="screen">
+        <div class="notch"></div>
+        <div class="thread-h"><div class="av">SC</div><div><b>Sunshine Coast Roofing</b><small>AI assistant</small></div></div>
+        <div class="sys miss">Missed call · 7:42 PM</div>
+        <div class="bub out">Hi Mike, sorry we missed you! This is Sunshine Coast Roofing. Is this about a repair or a new roof?<span class="t">7:42 PM · 28 sec later</span></div>
+        <div class="bub in">New roof. Got some damage after the storm.<span class="t">7:44 PM</span></div>
+        <div class="bub out">Sorry to hear that. We can send someone out for a free inspection. Thursday at 9 AM or Friday at 2 PM?<span class="t">7:44 PM</span></div>
+        <div class="bub in">Friday at 2 works 👍<span class="t">7:45 PM</span></div>
+        <div class="bub out">You're booked for Friday at 2 PM. You'll get a reminder the day before!<span class="t">7:45 PM</span></div>
+      </div></div>
+      <div class="float f1"><div class="dot" style="background:var(--accent-soft);color:var(--accent)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><b>Replied in 28 sec</b><small>After hours</small></div></div>
+      <div class="float f2"><div class="dot" style="background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M9 15.5l2 2 4-4"/></svg></div><div><b>Inspection booked</b><small>Fri · 2:00 PM</small></div></div>
     </div>
   </div>
 
-  <section class="pain">
-    <div><div class="eyebrow" style="margin-bottom:12px">Where jobs slip away</div><h2 id="painH"></h2></div>
-    <ul id="painList"></ul>
-  </section>
+  <div class="trades"><span class="lbl">Built for</span><span>Roofing</span><span>Pools</span><span>Windows &amp; shutters</span><span>HVAC</span><span>Property management</span><span>Contractors</span></div>
 
   <section id="services">
-    <div class="head"><h2>What we set up for you</h2><p id="svcIntro"></p></div>
-    <div class="grid" id="svcGrid"></div>
-  </section>
-
-  <section id="demo">
-    <div class="head"><h2>Hear it on a real call</h2><p id="demoIntro"></p></div>
-    <div class="demo">
-      <div class="call" id="callLog"></div>
-      <div class="after">
-        <div class="eyebrow">What happens after the call</div>
-        <ul id="afterList"></ul>
+    <div class="head">
+      <div class="eyebrow">What we do</div>
+      <h2>Everything you need to turn more leads into booked jobs</h2>
+      <p>Pick what you need. We build it around how your business already runs, then keep it running for you.</p>
+    </div>
+    <div class="svcs">
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>AI Voice Agent</h3>
+        <p>Answers every call day or night in a natural voice. Asks the right questions, books the appointment on your calendar, and passes calls to you when someone wants a person.</p>
+        <span class="res">→ No more missed calls</span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>Speed to Lead</h3>
+        <p>Every new lead from your website, Google, Facebook or a missed call gets a text and a call within 60 seconds, before they reach out to someone else.</p>
+        <span class="res">→ First to respond, first to book</span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Lead Nurture</h3>
+        <p>Automatic texts and emails that check back on every open quote and every "let me think about it," until they're ready to sign.</p>
+        <span class="res">→ Close more of the quotes you send</span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11h-6M20 8v6"/></svg></div>
+        <h3>Reactivation</h3>
+        <p>We reach back out to your old leads and past customers with personal texts and offers, and turn people you already paid for into new jobs.</p>
+        <span class="res">→ Revenue from leads you already have</span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+        <h3>CRM Buildout</h3>
+        <p>Every lead, call, quote and job in one simple place, set up for how your company works. See what's coming in and what's closing at a glance.</p>
+        <span class="res">→ Nothing slips through the cracks</span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 8.5a5 5 0 0 1 0 7M19 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <h3>Lead Generation with Ads</h3>
+        <p>Facebook and Instagram ads that bring in homeowners looking for your service, sent straight into your AI follow-up so every lead gets worked.</p>
+        <span class="res">→ More leads, and none of them wasted</span>
       </div>
     </div>
   </section>
-<section id="live-demo">
-  <div class="head"><h2>Try it live</h2><p>Talk to our AI receptionist out loud and watch missed-call text-back fire in real time. Uses your microphone.</p></div>
-  <div data-lumina-embed="emb_b56gkh3ahzcbv2jazx1r2d" data-lumina-mode="inline" data-lumina-theme="auto"></div>
-  <script src="https://seedlinelabs.luminasales.io/embed.js" async></script>
-</section>
-  <section id="roi">
-    <div class="head"><h2>How much is this costing you?</h2><p>Answer four quick questions. Use your best guess. There are no wrong answers.</p></div>
+
+  <section id="how" style="border-top:1px solid var(--line)">
+    <div class="head" style="margin-inline:auto;text-align:center">
+      <div class="eyebrow">How it works</div>
+      <h2>From new lead to booked job, on autopilot</h2>
+    </div>
+    <div class="flow">
+      <div class="st"><div class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/></svg></div><div class="time">0 sec</div><h3>A lead comes in</h3><p>A call, a form, a Facebook ad or a missed call.</p></div>
+      <div class="st"><div class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="time">Under 60 sec</div><h3>AI responds</h3><p>A text and a call go out right away, any time of day.</p></div>
+      <div class="st"><div class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><div class="time">Days to weeks</div><h3>Follows up</h3><p>Checks back until they're ready, so no quote goes cold.</p></div>
+      <div class="st"><div class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div class="time">Done</div><h3>Booked on your calendar</h3><p>You just show up to the appointment.</p></div>
+    </div>
+    <div class="note"><span><b>Live in about 2 weeks.</b> We build, test and launch it.</span><span><b>No new software to learn.</b> We keep it running for you.</span></div>
+  </section>
+
+  <section id="demo" style="border-top:1px solid var(--line)">
+    <div class="head">
+      <div class="eyebrow">Live demo</div>
+      <h2>Talk to the AI yourself</h2>
+      <p>Speak to our AI receptionist out loud and watch the missed-call text-back happen in real time. Uses your microphone.</p>
+    </div>
+    <div class="demo-box">
+      <div data-lumina-embed="emb_b56gkh3ahzcbv2jazx1r2d" data-lumina-mode="inline" data-lumina-theme="auto"></div>
+      <script src="https://seedlinelabs.luminasales.io/embed.js" async></script>
+    </div>
+    <p class="demo-alt"><a href="https://seedlinelabs.luminasales.io/seedline-labs-demo" target="_blank" rel="noopener">Demo not loading? Open it in a new tab →</a></p>
+  </section>
+
+  <section id="roi" style="border-top:1px solid var(--line)">
+    <div class="head">
+      <div class="eyebrow">Calculator</div>
+      <h2>How much are missed leads costing you?</h2>
+      <p>Answer four quick questions. Your best guess is fine.</p>
+    </div>
     <div class="roi">
       <div class="qs">
         <div class="q">
           <label for="q-job">1. What is a typical job worth to you?</label>
-          <div class="money"><span>$</span><input id="q-job" inputmode="numeric" autocomplete="off"></div>
+          <div class="money"><span>$</span><input id="q-job" inputmode="numeric" autocomplete="off" value="8,000"></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-miss">2. About how many calls do you miss in a week?</span>
           <p class="hint">Calls that go to voicemail or ring out while you're busy.</p>
-          <div class="stepper" role="group" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="-1" aria-label="One less">−</button><input id="q-miss" inputmode="numeric" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="1" aria-label="One more">+</button></div>
+          <div class="stepper" role="group" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="-1" aria-label="One less">−</button><input id="q-miss" inputmode="numeric" aria-labelledby="ql-miss" value="5"><button type="button" data-t="q-miss" data-d="1" aria-label="One more">+</button></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-leads">3. How many leads come in online each week?</span>
-          <p class="hint">Website forms, Facebook, Google, Angi, HomeAdvisor and so on.</p>
-          <div class="stepper" role="group" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="-1" aria-label="One less">−</button><input id="q-leads" inputmode="numeric" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="1" aria-label="One more">+</button></div>
+          <p class="hint">Website forms, Facebook, Google, Angi and so on.</p>
+          <div class="stepper" role="group" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="-1" aria-label="One less">−</button><input id="q-leads" inputmode="numeric" aria-labelledby="ql-leads" value="10"><button type="button" data-t="q-leads" data-d="1" aria-label="One more">+</button></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-speed">4. How fast do you usually call those leads back?</span>
@@ -277,192 +354,70 @@ footer{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;fle
           <div><span>From missed calls</span><b id="a-miss"></b></div>
           <div><span>From slow callbacks</span><b id="a-slow"></b></div>
         </div>
-        <a class="btn cal" href="#book" style="background:#FFFFFF;color:#0F2747">Show me how to get it back</a>
-        <p class="fine" id="a-fine"></p>
+        <a class="btn" href="#book">Show me how to get it back</a>
+        <p class="fine">Estimate assumes about 4 in 10 missed callers are real customers and you close about 1 in 4 of them, and that you close about 1 in 6 online leads when you call fast, fewer the longer they wait.</p>
       </div>
     </div>
-  </section>
-
-  <section id="pricing">
-    <div class="head"><h2>How pricing works</h2><p>Clear and simple. We quote your setup and monthly fee on the audit call once we know which systems you need.</p></div>
-    <div class="price">
-      <div class="pcard">
-        <div class="when">One time</div>
-        <h3>Setup fee</h3>
-        <ul><li>We build your AI systems around how your business works</li><li>Connect your phone number, calendar and CRM</li><li>Train the AI on your services, service area and pricing</li><li>Test everything before it goes live</li><li>A quick walkthrough so you know where everything is</li></ul>
-      </div>
-      <div class="pcard">
-        <div class="when">Every month</div>
-        <h3>Monthly fee</h3>
-        <ul><li>Usage: AI call minutes, texts and emails</li><li>Hosting and keeping every system running</li><li>Minor tweaks, like updating hours, prices or a script</li><li>We monitor everything and handle any issues fast</li></ul>
-      </div>
-      <div class="pcard">
-        <div class="when">Only if you want it</div>
-        <h3>New additions</h3>
-        <ul><li>New systems or features down the road</li><li>Adding a new service line, location or trade</li><li>Custom builds beyond your original setup</li><li>Quoted separately, before any work starts</li></ul>
-      </div>
-    </div>
-    <div class="notdept">
-      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="var(--accent)"/><path d="M8 13.5l3.2 3.2L18.5 9" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div><b>It runs on its own.</b><p>Once it's live, the AI answers your calls, texts back your leads and follows up for you, so you don't need to hire anyone or learn anything new. You just show up to the appointments it books. We keep it running in the background and handle anything that comes up, fast.</p></div>
-    </div>
-  </section>
-
-  <section id="process">
-    <div class="head"><h2>Live in about two weeks</h2><p>You keep running jobs. We build, connect and test everything around how your office already works.</p></div>
-    <div class="steps">
-      <div class="step"><div class="n">Day 1</div><h3>Free audit call</h3><p>We look at your calls, leads and callback times, and show you where jobs slip through.</p></div>
-      <div class="step"><div class="n">Days 2–10</div><h3>We build it</h3><p>Voice agent trained on your business, CRM set up, follow-up texts written.</p></div>
-      <div class="step"><div class="n">Days 11–14</div><h3>Test and go live</h3><p>We test it before your customers ever see it, give you a quick walkthrough so you know where everything is, and switch it on.</p></div>
-      <div class="step"><div class="n">After launch</div><h3>It runs on its own</h3><p>The AI handles calls, callbacks and follow-up. You show up to booked appointments. We monitor it and keep it running smoothly.</p></div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="head"><h2>Questions</h2></div>
-    <details><summary>Will the AI sound like a robot to my customers?</summary><p>No. It uses a natural voice, knows your services and service area, and passes the call to you or your office the moment a caller asks for a person.</p></details>
-    <details><summary>Do I need to be good with computers?</summary><p>No. We set everything up and handle the tech. You get booked appointments on your calendar and a text when something needs you.</p></details>
-    <details><summary>Do I have to change my phone number or software?</summary><p>Usually not. We connect to what you already use. If you're running off a notebook and text messages, we set up a simple system for you.</p></details>
-    <details><summary>How does pricing work?</summary><p>A one-time setup fee to build your systems and show you how they work. Then a monthly fee that covers usage, monitoring, support and minor tweaks. New systems or features you want added later are quoted separately. We quote the setup and monthly fee on your free audit call.</p></details>
-    <details><summary>What if I need help?</summary><p>Just reach out and we handle it fast. Support is included in your monthly fee, and we monitor your systems so most things are handled before you ever notice.</p></details>
-    <details><summary>Do I need to hire someone to run this?</summary><p>No. The AI does the work: answering calls, texting back leads and following up. You don't need to hire anyone or learn new software. We keep it running in the background so you can focus on the jobs and growing your business.</p></details>
-    <details><summary>What is AEO?</summary><p>Answer Engine Optimization. More homeowners now ask ChatGPT, Google's AI answers or Siri who to hire. AEO sets up your website, reviews and listings so those tools recommend you by name.</p></details>
-    <details><summary>How soon will I see results?</summary><p>Missed calls and slow callbacks get fixed the day we go live. AEO and long-term follow-up build over the next 60 to 90 days.</p></details>
   </section>
 
   <div class="book" id="book">
-    <div>
-      <h2>Stop losing jobs to the next company that picks up</h2>
-      <p>Book a free 30-minute AI audit. We'll show you how many calls and leads you're losing and exactly what we'd set up to get them back.</p>
+    <div style="position:relative">
+      <div class="eyebrow">Free audit call</div>
+      <h2>See where your leads are slipping away</h2>
+      <p>Book a free call. We'll look at how you handle calls, leads and quotes today and show you exactly what we'd set up.</p>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".2"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Find out how many leads you're missing</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".2"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>See the AI working for a company like yours</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#9CC0FF" opacity=".2"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="#9CC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Get a simple plan, no pressure</li>
+      </ul>
+      <div class="me"><img src="/founder.jpg" alt="Adolfo Perez" width="52" height="52"><div><b>Adolfo Perez, founder</b><small>3 years in pool resurfacing before Seedline · Sarasota, FL</small></div></div>
     </div>
-    <div style="display:grid;gap:16px;align-content:center">
-      <ul><li>See what missed calls are costing you</li><li>Hear a live AI demo for your company</li><li>Get a simple plan, no obligation</li></ul>
-      <a class="btn calOut" href="#book" target="_blank" rel="noopener">Pick a time on Calendly →</a>
-      <a class="btn ghost demoOut" href="#live-demo">▶ Try the live demo first</a>
-      <p style="font-size:14px;margin:0;opacity:.7">30 minutes · Google Meet or phone</p>
+    <div style="position:relative">
+      <div class="cal" id="calEmbed"><div class="fallback"><p style="font-weight:700;font-size:18px">Pick a time that works for you</p><a class="btn" id="calLink" href="https://calendly.com/seedlinelabs/new-meeting-1" target="_blank" rel="noopener">Open the calendar →</a></div></div>
+      <a class="alt" id="calAlt" href="https://calendly.com/seedlinelabs/new-meeting-1" target="_blank" rel="noopener">Calendar not loading? Open it in a new tab →</a>
     </div>
-    <div id="calEmbed" hidden style="grid-column:1/-1;background:#FFFFFF;border-radius:12px;overflow:hidden;min-height:700px"></div>
   </div>
 
-  <footer><span>© 2026 Seedline Labs · AI systems for pool and concrete contractors</span><a href="mailto:seedlinelabs@gmail.com" style="color:inherit">seedlinelabs@gmail.com</a></footer>
+  <footer><span>© 2026 Seedline Labs · AI systems for home service companies</span><a href="mailto:seedlinelabs@gmail.com">seedlinelabs@gmail.com</a></footer>
 </main>
 
 <script>
-/* ===== Paste your links here ===== */
+/* ===== Your booking link ===== */
 const CALENDLY_URL = "https://calendly.com/seedlinelabs/new-meeting-1";
-const EMBED_CALENDAR = true; // true on the live site: shows the calendar right on the page
-const DEMO_URL     = ""; // demo is embedded on the page; full demo link: https://seedlinelabs.luminasales.io/seedline-labs-demo
-/* ================================= */
+/* ============================= */
+(function(){
+  const box=document.getElementById('calEmbed');
+  document.getElementById('calLink').href=CALENDLY_URL;
+  document.getElementById('calAlt').href=CALENDLY_URL;
+  box.innerHTML='<div class="calendly-inline-widget" data-url="'+CALENDLY_URL+'?hide_gdpr_banner=1&primary_color=1d5fd1" style="min-width:300px;height:660px"></div>';
+  const s=document.createElement('script');
+  s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;
+  document.body.appendChild(s);
+})();
 
-const N={
- pool:{
-  h1:'Every pool lead <em>answered</em>, followed up and booked.',
-  lede:'Seedline Labs sets up AI systems for pool builders and renovation companies. We answer every call, text back every lead in under a minute, and keep buyers warm until they sign.',
-  painH:'Pool buyers call three builders. They hire the one who calls back.',
-  pain:[
-   ['Calls go to voicemail mid-dig','Your crew is on site and the office is slammed in spring. A homeowner with a $70k project hangs up and calls the next builder on Google.'],
-   ['Leads wait hours for a callback','A Friday-night form fill gets a call Monday. By then they have two consultations booked.'],
-   ['Buyers go cold','Pool buyers take weeks or months to decide. Without follow-up, they forget who you are.'],
-   ['No idea what your ads bring in','Leads live in texts, sticky notes and inboxes, so nobody knows which source books actual pools.']],
-  svcIntro:'Built for how pool companies sell: big jobs, long decisions and a busy season that buries the office.',
-  svc:[
-   ['AI Voice Agent','Answers every call 24/7 in a natural voice. Asks new build or renovation, budget and timeline, then books the consultation on your calendar.'],
-   ['Speed to Lead','Every website, Google and Facebook lead gets a text and a call within 60 seconds, before they reach out to another builder.'],
-   ['Lead Nurture','Automatic texts and emails that keep buyers warm through design, financing and permits, plus off-season campaigns to fill spring build slots.'],
-   ['CRM Pipeline','One place to see every lead from first call to dig day: consult, design, proposal, contract, permit, build.'],
-   ['AEO','Get named when homeowners ask ChatGPT, Google AI or Siri for the best pool builder in your area.'],
-   ['Dashboards','Calls answered, leads by source, consults booked and jobs won, on one simple screen.'],
-   ['Custom Builds','Anything specific to your shop: financing pre-qualification, build-progress texts to customers, opening and closing reminders.']],
-  demoIntro:'A sample after-hours call to a pool builder. The AI asks the right questions and books the consultation while the owner is off the clock.',
-  call:[['ai','Thanks for calling Blue Ridge Pools, this is Ava. Are you looking at a new pool or work on an existing one?'],['cx','New pool. We just bought a house and the backyard is empty.'],['ai','Congrats on the new place. Are you thinking in-ground concrete, fiberglass, or not sure yet?'],['cx','Probably concrete. We want it done before next summer.'],['ai','That timing works well if we start design this winter. Do you have a rough budget in mind?'],['cx','Somewhere around sixty to eighty.'],['ai','Great. I have Thursday at 4 PM or Saturday at 10 AM for a free backyard consultation. Which works better?'],['cx','Saturday at 10.'],['ai','You\'re booked for Saturday at 10 AM. I\'ll text you a confirmation and a few photos of recent builds.']],
-  callMeta:['Sat 9:42 PM · after hours','Consult booked'],
-  after:[['Instantly','Lead saved in your CRM with budget, pool type and timeline'],['10 sec','Confirmation text and photos sent to the homeowner'],['1 min','You get a text summary and the call recording'],['Day before','Reminder text so they actually show up']],
-  calc:{job:65000,miss:3,leads:5,speed:'0.35',real:0.3,close:0.12,leadClose:0.08},
-  fine:'Based on these assumptions for pool companies: about 3 in 10 missed callers are real buyers, and you close about 1 in 8. You close about 1 in 12 online leads when you call fast, and fewer the longer they wait.'
- },
- concrete:{
-  h1:'Win the job <em>before</em> the other guy calls back.',
-  lede:'Seedline Labs sets up AI systems for concrete companies and general contractors. We pick up while your crew is pouring, text back every lead in under a minute, and follow up on every estimate until it\'s signed.',
-  painH:'You can\'t answer the phone with a bull float in your hands.',
-  pain:[
-   ['Calls missed during pours','A slab doesn\'t wait. Neither does the homeowner who wants a driveway quote, so they call the next contractor.'],
-   ['Estimates sent, then nothing','You drive out, measure, send a number, and never follow up. Half of those jobs go to whoever stayed in touch.'],
-   ['Slow callbacks on web leads','Leads that sit overnight are already talking to two other crews by morning.'],
-   ['Rain days wreck the schedule','Every rain day means a dozen calls and texts to reschedule, all by hand.']],
-  svcIntro:'Built for how concrete and GC work runs: fast quotes, lots of estimates and a crew that\'s always on site.',
-  svc:[
-   ['AI Voice Agent','Answers every call while you work. Asks project type (driveway, patio, foundation, flatwork), size and timeline, then books the estimate visit.'],
-   ['Speed to Lead','Every website, Google and Facebook lead gets a text and a call within 60 seconds.'],
-   ['Lead Nurture','Automatic follow-up on every open estimate until it\'s signed, plus campaigns to bring back past customers for sealing and repeat work.'],
-   ['CRM Pipeline','Lead, estimate, scheduled pour and invoice, in one place your whole team can see.'],
-   ['AEO','Show up when people ask ChatGPT, Google AI or Siri for a concrete contractor near them.'],
-   ['Dashboards','Estimates sent vs. won, average job size, where leads come from and revenue, on one simple screen.'],
-   ['Custom Builds','Rain-day reschedule texts, sub-bid intake for GCs, review requests after every pour, whatever your shop needs.']],
-  demoIntro:'A sample call to a concrete company during a pour. The AI asks the right questions and books the estimate while the crew keeps working.',
-  call:[['ai','Thanks for calling Ironline Concrete, this is Ava. What kind of project can we help with?'],['cx','I need my driveway torn out and redone.'],['ai','We do a lot of those. Roughly how big is it, a one-car or two-car driveway?'],['cx','Two-car, plus the walkway to the front door.'],['ai','Got it. Any interest in stamped or colored concrete, or a standard broom finish?'],['cx','Maybe stamped on the walkway.'],['ai','I can have an estimator come measure. Tomorrow at 8 AM or Wednesday at 3 PM?'],['cx','Wednesday works.'],['ai','You\'re set for Wednesday at 3 PM. I\'ll text the confirmation and some stamped patterns to look at.']],
-  callMeta:['Tue 11:15 AM · crew on a pour','Estimate booked'],
-  after:[['Instantly','Lead saved in your CRM with project type, size and finish'],['10 sec','Confirmation text with stamped pattern options sent'],['1 min','You get a text summary and the call recording'],['3 days later','Estimate follow-up starts, until it\'s signed']],
-  calc:{job:7500,miss:6,leads:10,speed:'0.35',real:0.5,close:0.3,leadClose:0.25},
-  fine:'Based on these assumptions for concrete companies: about half of missed callers are real customers, and you close about 3 in 10. You close about 1 in 4 online leads when you call fast, and fewer the longer they wait.'
- }
-};
-const $=id=>document.getElementById(id);
-const money=n=>'$'+Math.round(n).toLocaleString('en-US');
-let cur='pool', speed='0.35';
-
-function num(id){return Math.max(0,parseInt(String($(id).value).replace(/[^0-9]/g,''))||0)}
-function calc(){
-  const c=N[cur].calc, job=num('q-job');
-  const missJobs=num('q-miss')*52*c.real*c.close;
-  const slowJobs=num('q-leads')*52*c.leadClose*(+speed);
-  $('a-miss').textContent=money(missJobs*job);
-  $('a-slow').textContent=money(slowJobs*job);
-  $('a-total').textContent=money((missJobs+slowJobs)*job);
-  $('a-jobs').textContent=Math.round(missJobs+slowJobs);
-}
-function setSpeed(v){speed=v;document.querySelectorAll('#speed button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));calc()}
-function setNiche(n){
-  cur=n; const d=N[n];
-  document.body.dataset.niche=n;
-  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.n===n));
-  $('h1').innerHTML=d.h1; $('lede').textContent=d.lede;
-  $('painH').textContent=d.painH;
-  $('painList').innerHTML=d.pain.map(p=>'<li><span class="x">✕</span><div><strong>'+p[0]+'</strong><p>'+p[1]+'</p></div></li>').join('');
-  $('svcIntro').textContent=d.svcIntro;
-  const tags=['Never miss a call','Never miss a lead','Close more jobs','Close more jobs','Get found','See everything','Built for you'];
-  $('svcGrid').innerHTML=d.svc.map((s,i)=>'<div class="svc'+(i===6?' wide':'')+'"><span class="tag">'+tags[i]+'</span><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>').join('');
-  $('demoIntro').textContent=d.demoIntro;
-  $('callLog').innerHTML='<div class="meta"><span>'+d.callMeta[0]+'</span><b>● '+d.callMeta[1]+'</b></div>'+d.call.map(m=>'<div class="msg '+m[0]+'"><small>'+(m[0]==='ai'?'AI agent':'Caller')+'</small>'+m[1]+'</div>').join('');
-  $('afterList').innerHTML=d.after.map(a=>'<li><span>'+a[0]+'</span><div>'+a[1]+'</div></li>').join('');
-  $('q-job').value=d.calc.job.toLocaleString('en-US'); $('q-miss').value=d.calc.miss; $('q-leads').value=d.calc.leads;
-  $('a-fine').textContent=d.fine;
-  setSpeed(d.calc.speed);
-  document.querySelectorAll('.swap').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
-  try{localStorage.setItem('niche',n)}catch(e){}
-}
-document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{setNiche(t.dataset.n);try{history.replaceState(null,'','#'+t.dataset.n)}catch(e){}}));
-document.querySelectorAll('.stepper button').forEach(b=>b.addEventListener('click',()=>{const i=$(b.dataset.t);i.value=Math.max(0,num(b.dataset.t)+(+b.dataset.d));calc()}));
-document.querySelectorAll('#speed button').forEach(b=>b.addEventListener('click',()=>setSpeed(b.dataset.v)));
-['q-miss','q-leads'].forEach(id=>$(id).addEventListener('input',calc));
-$('q-job').addEventListener('input',e=>{const v=num('q-job');e.target.value=v?v.toLocaleString('en-US'):'';calc()});
-
-/* wire up links once you paste them above */
-if(CALENDLY_URL && EMBED_CALENDAR){
-  // Live site: calendar sits on the page, so every booking button scrolls to it
-  const box=$('calEmbed'); box.hidden=false;
-  box.innerHTML='<div class="calendly-inline-widget" data-url="'+CALENDLY_URL+'?hide_gdpr_banner=1&primary_color=1d5fd1" style="min-width:320px;height:700px"></div>';
-  const s=document.createElement('script'); s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true; document.body.appendChild(s);
-  document.querySelectorAll('.cal').forEach(a=>{a.href='#calEmbed'});
-  document.querySelectorAll('.calOut').forEach(a=>{a.textContent='Or open the calendar in a new tab →';a.href=CALENDLY_URL;a.target='_blank';a.rel='noopener'});
-} else if(CALENDLY_URL){document.querySelectorAll('.calOut,.cal').forEach(a=>{a.href=CALENDLY_URL;a.target='_blank';a.rel='noopener'})}
-else{document.querySelectorAll('.calOut').forEach(a=>{a.removeAttribute('target')})}
-if(DEMO_URL){document.querySelectorAll('.demoBtn,.demoOut').forEach(a=>{a.href=DEMO_URL;a.target='_blank';a.rel='noopener'})}
-else{document.querySelectorAll('.demoOut').forEach(a=>{a.removeAttribute('target')})}
-
-let start='pool';
-const h=location.hash.replace('#','');
-if(N[h])start=h; else {try{const s=localStorage.getItem('niche');if(N[s])start=s}catch(e){}}
-setNiche(start);
+/* ROI calculator */
+(function(){
+  const $=id=>document.getElementById(id);
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const REAL=0.4, CLOSE=0.25, LEAD_CLOSE=0.16;
+  let speed='0.35';
+  const num=id=>Math.max(0,parseInt(String($(id).value).replace(/[^0-9]/g,''))||0);
+  function calc(){
+    const job=num('q-job');
+    const missJobs=num('q-miss')*52*REAL*CLOSE;
+    const slowJobs=num('q-leads')*52*LEAD_CLOSE*(+speed);
+    $('a-miss').textContent=money(missJobs*job);
+    $('a-slow').textContent=money(slowJobs*job);
+    $('a-total').textContent=money((missJobs+slowJobs)*job);
+    $('a-jobs').textContent=Math.round(missJobs+slowJobs);
+  }
+  function setSpeed(v){speed=v;document.querySelectorAll('#speed button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));calc()}
+  document.querySelectorAll('.stepper button').forEach(b=>b.addEventListener('click',()=>{$(b.dataset.t).value=Math.max(0,num(b.dataset.t)+(+b.dataset.d));calc()}));
+  document.querySelectorAll('#speed button').forEach(b=>b.addEventListener('click',()=>setSpeed(b.dataset.v)));
+  ['q-miss','q-leads'].forEach(id=>$(id).addEventListener('input',calc));
+  $('q-job').addEventListener('input',e=>{const v=num('q-job');e.target.value=v?v.toLocaleString('en-US'):'';calc()});
+  setSpeed(speed);
+})();
 </script>
 </body>
 </html>
