@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book a Free Audit · Seedline Labs</title>
+<meta name="description" content="Book a free lead audit with Seedline Labs. AI systems that answer every lead in under a minute and follow up until they book.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seedline Labs">
+<meta property="og:title" content="Book a Free Audit · Seedline Labs">
+<meta property="og:description" content="Every lead answered in under a minute and followed up until they book.">
+<meta property="og:url" content="https://www.seedlinelabs.com/book/">
+<meta property="og:image" content="https://www.seedlinelabs.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --sunk:#EDF1F6; --ink:#0F1E33; --muted:#4F5E76; --line:#DCE3EC;
+  --accent:#1D5FD1; --accent-soft:#E3ECFB; --deep:#0F2747; --good:#16794A; --bad:#B2382A;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;min-height:100vh;display:flex;flex-direction:column}
+[hidden]{display:none!important}
+h1,h2{font-family:var(--display);line-height:1.06;margin:0;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin-inline:auto;width:100%}
+header{padding-block:18px;border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px;background:var(--bg)}
+.logo{font-family:var(--display);font-weight:800;font-size:20px;display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.logo svg{width:26px;height:26px}
+main{flex:1;padding-block:56px 72px}
+@media (max-width:700px){main{padding-block:32px 48px}}
+
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:56px;align-items:center}
+@media (max-width:900px){.grid{grid-template-columns:1fr;gap:32px}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(34px,5vw,56px);font-weight:800;margin-top:14px}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:18px;color:var(--muted);margin-top:18px;max-width:46ch}
+.list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.list li{display:flex;gap:10px;align-items:flex-start;font-size:16.5px}
+.list svg{flex:none;margin-top:4px}
+.me{display:flex;align-items:center;gap:14px;margin-top:30px}
+.me img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+.me b{display:block;font-size:15.5px}
+.me small{color:var(--muted);font-size:14px}
+@media (max-width:900px){.list,.me{display:none}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,34px);box-shadow:0 30px 60px -32px rgba(15,39,71,.35)}
+.step{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card h2{font-size:26px;font-weight:800;margin-top:8px}
+.card .sub{color:var(--muted);font-size:15.5px;margin-top:6px}
+form{display:grid;gap:16px;margin-top:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input{font:inherit;font-size:17px;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:#fff}
+input[aria-invalid="true"]{border-color:var(--bad)}
+.err{color:var(--bad);font-size:13.5px;font-weight:600;min-height:0}
+button{all:unset;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:17px;border-radius:12px;padding:16px 22px;margin-top:4px;transition:filter .15s,transform .15s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+button[disabled]{opacity:.7;cursor:wait;transform:none}
+.fine{font-size:13px;color:var(--muted);text-align:center}
+
+/* step 2 */
+.cal-wrap{max-width:900px;margin-inline:auto}
+.cal-head{text-align:center;margin-bottom:22px}
+.cal-head h1{font-size:clamp(30px,4.5vw,46px)}
+.cal-head p{color:var(--muted);margin-top:10px}
+.cal{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;min-height:700px}
+.alt{display:block;text-align:center;margin-top:14px;font-size:14.5px}
+.done{text-align:center;max-width:560px;margin:40px auto 0;display:grid;gap:14px;justify-items:center}
+.done .ok{width:64px;height:64px;border-radius:50%;background:color-mix(in srgb,var(--good) 14%,transparent);display:grid;place-items:center}
+
+footer{padding-block:22px 30px;border-top:1px solid var(--line);margin-inline:-20px;padding-inline:20px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="/"><svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#0F2747"/><path d="M13 19.5V11m0 0c0-3.2 2.4-5.2 5.5-5.2 0 3.2-2.4 5.2-5.5 5.2Zm0 2.4c0-2.6-2-4.3-4.6-4.3 0 2.6 2 4.3 4.6 4.3Z" fill="none" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Seedline Labs</a></div></header>
+
+<main><div class="wrap">
+
+  <!-- STEP 1: info -->
+  <div class="grid" id="step1">
+    <div>
+      <div class="eyebrow">Free lead audit</div>
+      <h1>Every lead answered in under a minute and <em>followed up until they book.</em></h1>
+      <p class="lede">Book a free call. I'll look at how you handle calls, leads and quotes today, and show you exactly what we'd set up for your company.</p>
+      <ul class="list">
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Find out how many leads you're missing</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>See the AI working for a company like yours</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Get a simple plan, no pressure</li>
+      </ul>
+      <div class="me"><img src="/founder.jpg" alt="Adolfo Perez" width="50" height="50"><div><b>Adolfo Perez, founder</b><small>3 years in pool resurfacing before Seedline · Sarasota, FL</small></div></div>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 1 of 2</div>
+      <h2>Where should we reach you?</h2>
+      <p class="sub">Then pick a time that works for you.</p>
+      <form id="leadForm" novalidate>
+        <label>First name
+          <input name="firstname" autocomplete="given-name" required>
+          <span class="err" data-for="firstname"></span>
+        </label>
+        <label>Mobile number
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          <span class="err" data-for="phone"></span>
+        </label>
+        <label>Email
+          <input name="email" type="email" inputmode="email" autocomplete="email" required>
+          <span class="err" data-for="email"></span>
+        </label>
+        <button type="submit" id="go">Pick a time →</button>
+        <p class="fine">Free call · No pressure · No spam</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- STEP 2: calendar -->
+  <div class="cal-wrap" id="step2" hidden>
+    <div class="cal-head">
+      <div class="step">Step 2 of 2</div>
+      <h1 id="calTitle">Last step: pick a time</h1>
+      <p>Choose whatever works best. You'll get a confirmation right away.</p>
+    </div>
+    <div class="cal" id="calEmbed"></div>
+    <a class="alt" id="calAlt" href="#" target="_blank" rel="noopener">Calendar not loading? Open it in a new tab →</a>
+  </div>
+
+  <!-- DONE -->
+  <div class="done" id="done" hidden>
+    <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1>You're booked!</h1>
+    <p style="color:var(--muted)">Check your email for the details. Talk soon.</p>
+    <a href="/" style="font-weight:700">Back to seedlinelabs.com</a>
+  </div>
+
+</div></main>
+
+<footer><div class="wrap"><span>© 2026 Seedline Labs · Sarasota, FL</span><span><a href="tel:+19417350549">(941) 735-0549</a> · <a href="mailto:seedlinelabs@gmail.com">seedlinelabs@gmail.com</a></span></div></footer>
+
+<script>
+/* ===== Settings ===== */
+const CALENDLY_URL = "https://calendly.com/seedlinelabs/new-meeting-1";
+const HUBSPOT_PORTAL = "247704827";
+const HUBSPOT_FORM = "270f89c9-fe46-47d6-b4af-127ee29015a3"; // "Booking insta page"
+/* ==================== */
+
+const form=document.getElementById('leadForm');
+const btn=document.getElementById('go');
+
+function setErr(name,msg){
+  const el=form.querySelector('[data-for="'+name+'"]');
+  const input=form.elements[name];
+  el.textContent=msg||'';
+  input.setAttribute('aria-invalid',msg?'true':'false');
+}
+function validate(){
+  let ok=true;
+  const f=form.elements;
+  const name=f.firstname.value.trim();
+  const phone=f.phone.value.replace(/[^0-9]/g,'');
+  const email=f.email.value.trim();
+  setErr('firstname',name?'':'Please enter your first name'); if(!name)ok=false;
+  const pOk=phone.length>=10&&phone.length<=15;
+  setErr('phone',pOk?'':'Please enter a valid phone number'); if(!pOk)ok=false;
+  const eOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  setErr('email',eOk?'':'Please enter a valid email'); if(!eOk)ok=false;
+  return ok;
+}
+function cookie(n){const m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?decodeURIComponent(m[1]):null}
+
+async function sendToHubSpot(data){
+  const body={
+    submittedAt:Date.now(),
+    fields:[
+      {objectTypeId:'0-1',name:'firstname',value:data.firstname},
+      {objectTypeId:'0-1',name:'phone',value:data.phone},
+      {objectTypeId:'0-1',name:'email',value:data.email}
+    ],
+    context:{pageUri:location.href,pageName:document.title}
+  };
+  const hutk=cookie('hubspotutk'); if(hutk)body.context.hutk=hutk;
+  const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(),6000);
+  try{
+    const r=await fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+HUBSPOT_PORTAL+'/'+HUBSPOT_FORM,{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:ctrl.signal,keepalive:true
+    });
+    if(!r.ok)console.warn('HubSpot submit failed',r.status,await r.text());
+  }catch(e){console.warn('HubSpot submit error',e)}
+  finally{clearTimeout(t)}
+}
+
+function showCalendar(data){
+  const params=new URLSearchParams({name:data.firstname,email:data.email,hide_gdpr_banner:'1',primary_color:'1d5fd1'});
+  const url=CALENDLY_URL+'?'+params.toString();
+  document.getElementById('step1').hidden=true;
+  document.getElementById('step2').hidden=false;
+  document.getElementById('calTitle').textContent='Thanks, '+data.firstname+'! Last step: pick a time';
+  document.getElementById('calAlt').href=url;
+  document.getElementById('calEmbed').innerHTML='<div class="calendly-inline-widget" data-url="'+url.replace(/"/g,'&quot;')+'" style="min-width:300px;height:700px"></div>';
+  const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;document.body.appendChild(s);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!validate())return;
+  const f=form.elements;
+  const data={firstname:f.firstname.value.trim(),phone:f.phone.value.trim(),email:f.email.value.trim()};
+  btn.disabled=true;btn.textContent='One sec…';
+  await sendToHubSpot(data);
+  showCalendar(data);
+});
+['firstname','phone','email'].forEach(n=>form.elements[n].addEventListener('input',()=>{if(form.elements[n].getAttribute('aria-invalid')==='true')validate()}));
+
+window.addEventListener('message',e=>{
+  if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
+    document.getElementById('step2').hidden=true;
+    document.getElementById('done').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+});
+</script>
+</body>
+</html>
