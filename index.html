@@ -88,6 +88,9 @@ nav a:hover{color:var(--ink)}
 .float b{display:block;font-size:14px}
 .float small{color:var(--muted)}
 .stage{padding:44px 0}
+@media (max-width:600px){.stage{padding:36px 0}.phone{width:min(272px,78vw);padding:10px;border-radius:32px}.screen{min-height:0;padding:14px 10px 16px;gap:8px;border-radius:24px}.bub{font-size:12.5px;padding:8px 11px}.thread-h b{font-size:13px}.av{width:30px;height:30px;font-size:12px}.float{padding:8px 11px;font-size:12.5px}.float b{font-size:13px}.dot{width:26px;height:26px}}
+.micro{margin-top:12px;font-size:14px;color:var(--muted)}
+footer .contact{display:flex;flex-wrap:wrap;gap:8px 20px}
 .f1{top:0;left:0}
 .f2{bottom:0;right:0}
 .dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}
@@ -229,6 +232,7 @@ footer a{color:inherit}
       <h1>Every lead answered in less than a minute and <em>followed up until they book.</em></h1>
       <p class="lede">We set up AI systems that pick up your calls, text back new leads, and keep following up, so no job slips away. Need more leads too? We also run ads that feed straight into it.</p>
       <div class="ctas"><a class="btn" href="#book">Book a free audit call</a><a class="btn ghost" href="#services">See what we do</a></div>
+      <p class="micro">Free call · No pressure · No obligation</p>
       <div class="checks">
         <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live in about 2 weeks</span>
         <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="var(--good)" opacity=".15"/><path d="M5.5 9.3l2.2 2.2 4.8-5" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>We handle all the tech</span>
@@ -336,38 +340,38 @@ footer a{color:inherit}
       <div class="qs">
         <div class="q">
           <label for="q-job">1. What is a typical job worth to you?</label>
-          <div class="money"><span>$</span><input id="q-job" inputmode="numeric" autocomplete="off" value="8,000"></div>
+          <div class="money"><span>$</span><input id="q-job" inputmode="numeric" autocomplete="off" value="5,000"></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-miss">2. About how many calls do you miss in a week?</span>
           <p class="hint">Calls that go to voicemail or ring out while you're busy.</p>
-          <div class="stepper" role="group" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="-1" aria-label="One less">−</button><input id="q-miss" inputmode="numeric" aria-labelledby="ql-miss" value="5"><button type="button" data-t="q-miss" data-d="1" aria-label="One more">+</button></div>
+          <div class="stepper" role="group" aria-labelledby="ql-miss"><button type="button" data-t="q-miss" data-d="-1" aria-label="One less">−</button><input id="q-miss" inputmode="numeric" aria-labelledby="ql-miss" value="3"><button type="button" data-t="q-miss" data-d="1" aria-label="One more">+</button></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-leads">3. How many leads come in online each week?</span>
           <p class="hint">Website forms, Facebook, Google, Angi and so on.</p>
-          <div class="stepper" role="group" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="-1" aria-label="One less">−</button><input id="q-leads" inputmode="numeric" aria-labelledby="ql-leads" value="10"><button type="button" data-t="q-leads" data-d="1" aria-label="One more">+</button></div>
+          <div class="stepper" role="group" aria-labelledby="ql-leads"><button type="button" data-t="q-leads" data-d="-1" aria-label="One less">−</button><input id="q-leads" inputmode="numeric" aria-labelledby="ql-leads" value="5"><button type="button" data-t="q-leads" data-d="1" aria-label="One more">+</button></div>
         </div>
         <div class="q">
           <span class="ql" id="ql-speed">4. How fast do you usually call those leads back?</span>
           <div class="choices" role="group" aria-labelledby="ql-speed" id="speed">
             <button type="button" data-v="0">Within 5 minutes</button>
-            <button type="button" data-v="0.2">Within an hour</button>
-            <button type="button" data-v="0.35">Later that day</button>
-            <button type="button" data-v="0.5">Next day or later</button>
+            <button type="button" data-v="0.1">Within an hour</button>
+            <button type="button" data-v="0.2">Later that day</button>
+            <button type="button" data-v="0.3">Next day or later</button>
           </div>
         </div>
       </div>
       <div class="answer" aria-live="polite">
         <div class="lbl">You could be leaving about</div>
         <div class="big" id="a-total"></div>
-        <div class="per">on the table every year. That's roughly <b id="a-jobs"></b> jobs.</div>
+        <div class="per">a year in jobs you're not getting. That's about <b id="a-month"></b> a month, or roughly <b id="a-jobs"></b> jobs.</div>
         <div class="rows">
           <div><span>From missed calls</span><b id="a-miss"></b></div>
           <div><span>From slow callbacks</span><b id="a-slow"></b></div>
         </div>
         <a class="btn" href="#book">Show me how to get it back</a>
-        <p class="fine">Estimate assumes about 4 in 10 missed callers are real customers and you close about 1 in 4 of them, and that you close about 1 in 6 online leads when you call fast, fewer the longer they wait.</p>
+        <p class="fine">A conservative estimate: it assumes about 3 in 10 missed callers are real customers and you'd close 1 in 5 of them, and that slow callbacks lose a share of the online leads you'd otherwise close.</p>
       </div>
     </div>
   </section>
@@ -390,7 +394,7 @@ footer a{color:inherit}
     </div>
   </div>
 
-  <footer><span>© 2026 Seedline Labs · AI systems for home service companies</span><a href="mailto:seedlinelabs@gmail.com">seedlinelabs@gmail.com</a></footer>
+  <footer><span>© 2026 Seedline Labs · AI systems for home service companies · Sarasota, FL</span><span class="contact"><a href="tel:+19417350549">(941) 735-0549</a><a href="mailto:seedlinelabs@gmail.com">seedlinelabs@gmail.com</a></span></footer>
 </main>
 
 <script>
@@ -411,8 +415,8 @@ const CALENDLY_URL = "https://calendly.com/seedlinelabs/new-meeting-1";
 (function(){
   const $=id=>document.getElementById(id);
   const money=n=>'$'+Math.round(n).toLocaleString('en-US');
-  const REAL=0.4, CLOSE=0.25, LEAD_CLOSE=0.16;
-  let speed='0.35';
+  const REAL=0.3, CLOSE=0.2, LEAD_CLOSE=0.15;
+  let speed='0.2';
   const num=id=>Math.max(0,parseInt(String($(id).value).replace(/[^0-9]/g,''))||0);
   function calc(){
     const job=num('q-job');
@@ -422,6 +426,7 @@ const CALENDLY_URL = "https://calendly.com/seedlinelabs/new-meeting-1";
     $('a-slow').textContent=money(slowJobs*job);
     $('a-total').textContent=money((missJobs+slowJobs)*job);
     $('a-jobs').textContent=Math.round(missJobs+slowJobs);
+    $('a-month').textContent=money((missJobs+slowJobs)*job/12);
   }
   function setSpeed(v){speed=v;document.querySelectorAll('#speed button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));calc()}
   document.querySelectorAll('.stepper button').forEach(b=>b.addEventListener('click',()=>{$(b.dataset.t).value=Math.max(0,num(b.dataset.t)+(+b.dataset.d));calc()}));
