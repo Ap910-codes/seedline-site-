@@ -200,10 +200,13 @@ async function sendToHubSpot(data){
     const r=await fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+HUBSPOT_PORTAL+'/'+HUBSPOT_FORM,{
       method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:ctrl.signal,keepalive:true
     });
-    if(!r.ok)console.warn('HubSpot submit failed',r.status,await r.text());
-  }catch(e){console.warn('HubSpot submit error',e)}
+    const txt=await r.text();
+    if(!r.ok)console.warn('HubSpot submit failed',r.status,txt);
+    return 'HubSpot '+r.status+': '+txt;
+  }catch(e){console.warn('HubSpot submit error',e);return 'HubSpot error: '+e}
   finally{clearTimeout(t)}
 }
+const DEBUG=new URLSearchParams(location.search).has('test');
 
 function showCalendar(data){
   const params=new URLSearchParams({name:data.firstname,email:data.email,hide_gdpr_banner:'1',primary_color:'1d5fd1'});
@@ -223,8 +226,9 @@ form.addEventListener('submit',async e=>{
   const f=form.elements;
   const data={firstname:f.firstname.value.trim(),phone:f.phone.value.trim(),email:f.email.value.trim()};
   btn.disabled=true;btn.textContent='One sec…';
-  await sendToHubSpot(data);
+  const result=await sendToHubSpot(data);
   showCalendar(data);
+  if(DEBUG){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;word-break:break-word;background:#fff3cd;border:1px solid #e0c36b;border-radius:12px;padding:14px;font-size:13px;margin:0 0 18px';pre.textContent=result;document.getElementById('step2').prepend(pre);}
 });
 ['firstname','phone','email'].forEach(n=>form.elements[n].addEventListener('input',()=>{if(form.elements[n].getAttribute('aria-invalid')==='true')validate()}));
 
