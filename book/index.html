@@ -250,7 +250,6 @@ function sendConsent(data){
   const body={submittedAt:Date.now(),fields:[
     {objectTypeId:'0-1',name:'email',value:data.email},
     {objectTypeId:'0-1',name:'sms_call_consent',value:'true'},
-    {objectTypeId:'0-1',name:'consent_date',value:String(Date.now())},
     {objectTypeId:'0-1',name:'consent_wording',value:text}
   ],context:{pageUri:location.href,pageName:document.title}};
   fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+HUBSPOT_PORTAL+'/'+HUBSPOT_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),keepalive:true})
